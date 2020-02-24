@@ -23,7 +23,7 @@ public class GuestbookController {
 	public String index(Model model) {
 		List<GuestbookVo> list = guestbookRepository.findAll();
 		model.addAttribute("list", list);
-		return "/WEB-INF/views/index.jsp";
+		return "index";
 	}
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
@@ -35,7 +35,7 @@ public class GuestbookController {
 	@RequestMapping(value="/delete/{no}", method=RequestMethod.GET)
 	public String delete(@PathVariable("no") Long no, Model model) {
 		model.addAttribute("no", no);
-		return "/WEB-INF/views/delete.jsp";
+		return "delete";
 	}
 	
 	@RequestMapping(value="/delete/{no}", method=RequestMethod.POST)
