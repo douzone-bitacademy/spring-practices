@@ -15,6 +15,14 @@ import com.douzone.guestbook.vo.GuestbookVo;
 
 @Repository
 public class GuestbookRepository {
+
+	public int delete(Long no, String password) {
+		GuestbookVo vo = new GuestbookVo();
+		vo.setNo(no);
+		vo.setPassword(password);
+		return delete(vo);
+	}
+	
 	public int delete( GuestbookVo vo ) {
 		int count = 0;
 		Connection conn = null;
@@ -163,5 +171,5 @@ public class GuestbookRepository {
 		} 
 		
 		return conn;
-	}	
+	}
 }
