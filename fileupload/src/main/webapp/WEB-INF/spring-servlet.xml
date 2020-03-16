@@ -9,6 +9,10 @@
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	<mvc:annotation-driven/>
+	
+	<!-- 서블릿 컨테이너의 디폴트 서블릿 위임 핸들러 -->
+	<mvc:default-servlet-handler />
 
 	<context:annotation-config />
 	<context:component-scan
@@ -34,4 +38,7 @@
 		<property name="defaultEncoding" value="utf-8" />
 	</bean>
 
+	<!-- mvc resources -->
+	<mvc:resources location="file:/mysite-uploads/" mapping="/images/**" />
+	
 </beans>
